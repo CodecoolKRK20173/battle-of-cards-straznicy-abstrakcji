@@ -6,12 +6,14 @@ public class Hand{
     private List<Card> cards;
 
 
-    public Hand(){
-        cards = new ArrayList<Card>();
+    public Hand(List<Card> cards){
+        this.cards = cards;
 
     }
+    public void display(){
+        for(Card card : cards){
+            System.out.println(card.getName());
+        }
+    }
     
-    // public ShowCard(){
-        
-    // }
 }

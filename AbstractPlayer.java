@@ -1,21 +1,19 @@
+import java.util.List;
 
 public abstract class AbstractPlayer {
     
     private String name;
     private Hand hand;
-    private int points;
+    private int points = 0;
 
 
-    public AbstractPlayer(String name,Hand hand, int points){
+    public AbstractPlayer(String name,List<Card> cards){
         this.name = name;
-        this.hand = hand;
-        this.points = points;
-
+        this.hand = new Hand(cards);
     }
 
     public String getName(){
         return name;
-
     }
 
     public Hand getHand(){
@@ -26,5 +24,7 @@ public abstract class AbstractPlayer {
         return points;
     }
 
-
+    public void setPoints(){
+        points++;
+    }
 }
