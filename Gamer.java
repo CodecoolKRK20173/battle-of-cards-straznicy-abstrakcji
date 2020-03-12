@@ -14,12 +14,14 @@ public class Gamer extends AbstractPlayer {
     public int getInput(){
         Scanner scan = new Scanner(System.in);
         playerChoice = scan.nextInt();
-        scan.close();
+        while(playerChoice < 1 || playerChoice > 4){
+            System.out.println("Podaj liczbe od 1 do 4");
+        }
         return playerChoice;
-       
-        
 
     }
+
+    
 
 
 
