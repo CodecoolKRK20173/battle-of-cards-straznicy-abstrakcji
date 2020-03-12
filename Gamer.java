@@ -1,11 +1,28 @@
 import java.util.List;
+import java.util.Scanner;
 
 public class Gamer extends AbstractPlayer {
 
+    public int playerChoice;
+
+
     public Gamer(String name, List<Card> cards) {
         super(name, cards);
-        // TODO Auto-generated constructor stub
+
     }
+
+    public int getInput(){
+        Scanner scan = new Scanner(System.in);
+        playerChoice = scan.nextInt();
+        scan.close();
+        return playerChoice;
+       
+        
+
+    }
+
+
+
 
     
 }
