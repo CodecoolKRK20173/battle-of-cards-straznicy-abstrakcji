@@ -6,12 +6,12 @@ public class Hand<cards> {
     private List<Card> cards;
 
 
-    Hand(){
+    public Hand(){
         cards = new ArrayList<Card>();
 
     }
     
-    public <Card> Card showCard() {
-
+    public ShowCard(){
+        
     }
 }
