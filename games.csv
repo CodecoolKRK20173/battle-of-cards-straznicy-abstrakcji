@@ -1,7 +1,6 @@
-'Name', 'Metascore', 'UserScore', 'NumberOfCopies', 'OpeningMonthIncome'
-'God Of War', 94, 9.1, 11, 131
-'Persona 5', 93, 8.7, 2.7, 30
-'Red Dead Redemption 2', 97, 8.1, 29, 985
-'NieR: Automata', 91, 8.5, 4.8, 39
-'Grand Theft Auto V', 97, 8.3, 120, 6000
-'The Witcher 3: Wild Hunt', 92, 9.2, 50, 175
+'God Of War', 94.0, 9.1, 1131, 1
+'Persona 5', 93.0, 8.7, 2.7, 30.0
+'Red Dead Redemption 2', 97.0, 8.1, 29.0, 985
+'NieR: Automata', 91.0, 8.5, 4.8, 39.0
+'Grand Theft Auto V', 97.0, 8.3, 120.0, 6000.0
+'The Witcher 3: Wild Hunt', 92.0, 9.2, 50.0, 175.0

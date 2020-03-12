@@ -8,7 +8,7 @@ public class Card {
     private float openingMonthIncome;
 
 
-    public Card(String name, float metascore, float userScore, int numberOfCopies, float openingMonthIncome){
+    public Card(String name, float metascore, float userScore, float numberOfCopies, float openingMonthIncome){
         this.name = name;
         this.metascore = metascore;
         this.userScore = userScore;

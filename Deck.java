@@ -1,5 +1,4 @@
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Deck {
@@ -8,6 +7,12 @@ public class Deck {
 
     public Deck(List<Card> cards){
         
-        cards = new ArrayList<Card>();
+        this.cards = cards;
+    }
+
+    public void displaCards(){
+        for(Card card : cards){
+            System.out.println(card.getName());
+        }
     }
 }

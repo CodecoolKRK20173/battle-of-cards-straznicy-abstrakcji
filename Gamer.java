@@ -1,4 +1,4 @@
-public class Gamer extends AbstractPlayer {
+// public class Gamer extends AbstractPlayer {
 
     
-}
+// }

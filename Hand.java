@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Hand<cards> {
+public class Hand{
 
     private List<Card> cards;
 
@@ -11,7 +11,7 @@ public class Hand<cards> {
 
     }
     
-    public ShowCard(){
+    // public ShowCard(){
         
-    }
+    // }
 }
