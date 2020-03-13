@@ -1,15 +1,20 @@
 import java.io.FileNotFoundException;
-import java.util.List;
 
 class Main {
+
+    
     public static void main(String[] args) throws FileNotFoundException {
         CardDao cardDao = new CSVCardDao();
         Deck deck = new Deck(cardDao.getCardFromFile());
-        
-        Gamer player1 = new Gamer("dupa", deck.getGamerCards());
-        player1.getHand().display();
-        player1.getInput();
-        System.out.println(player1.playerChoice);
+        Viev viev = new Viev();
+
+
+        Gamer rafal = new Gamer(deck.getGamerCards());
+        rafal.setName(rafal.getName());
+
+
+        viev.displayCardAttributes(rafal.getHand().passCard());
+        viev.displayChosenAttribure(rafal.getHand().passCard(), rafal.getInput());
 
     }
 }

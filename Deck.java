@@ -1,10 +1,10 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Deck {
 
     private List<Card> cards;
+
     private List<Card> gamerCards = new ArrayList<Card>();
     private List<Card> computerCards = new ArrayList<Card>();
 
@@ -13,7 +13,7 @@ public class Deck {
         drawCards();
     }
 
-    public void displaCards(){
+    public void displayCards(){
         for(Card card : cards){
             System.out.println(card.getName());
         }

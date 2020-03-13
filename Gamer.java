@@ -5,9 +5,16 @@ public class Gamer extends AbstractPlayer {
 
     public int playerChoice;
 
+    public Gamer(List<Card> cards){
+        super(cards);
 
-    public Gamer(String name, List<Card> cards) {
-        super(name, cards);
+    }
+
+    public String getName(){
+        Scanner scan = new Scanner(System.in);
+        String name = scan.next();
+        scan.close();
+        return name;
 
     }
 
@@ -16,15 +23,11 @@ public class Gamer extends AbstractPlayer {
         playerChoice = scan.nextInt();
         while(playerChoice < 1 || playerChoice > 4){
             System.out.println("Podaj liczbe od 1 do 4");
+            playerChoice = scan.nextInt();
         }
+        scan.close();
         return playerChoice;
 
     }
-
-    
-
-
-
-
-    
+   
 }

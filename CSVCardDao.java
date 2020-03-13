@@ -17,10 +17,10 @@ class CSVCardDao implements CardDao {
 
         String[] line = scan.nextLine().split(", ");
         String name =  line[0];
-        float metascore = Float.parseFloat(line[1]);
-        float userScore = Float.parseFloat(line[2]);
-        float numberOfCopies = Float.parseFloat(line[3]);
-        float openingMonthIncome = Float.parseFloat(line[4]);
+        int metascore = Integer.parseInt(line[1]);
+        int userScore = Integer.parseInt(line[2]);
+        int numberOfCopies = Integer.parseInt(line[3]);
+        int openingMonthIncome = Integer.parseInt(line[4]);
         Card card =  new Card(name,metascore,userScore,numberOfCopies,openingMonthIncome);
         cards.add(card);
 
