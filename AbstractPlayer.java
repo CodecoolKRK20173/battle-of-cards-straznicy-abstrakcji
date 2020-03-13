@@ -2,7 +2,7 @@ import java.util.List;
 
 public abstract class AbstractPlayer {
         
-    private String name;
+    protected String name;
     private Hand hand;
     private int points = 0;
 

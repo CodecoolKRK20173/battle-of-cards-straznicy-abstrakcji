@@ -6,15 +6,20 @@ class Main {
     public static void main(String[] args) throws FileNotFoundException {
         CardDao cardDao = new CSVCardDao();
         Deck deck = new Deck(cardDao.getCardFromFile());
-        Viev viev = new Viev();
+        View view = new View();
 
+        Computer comp = new Computer(deck.getComputerCards());
+        view.displayName(comp);
 
         Gamer rafal = new Gamer(deck.getGamerCards());
-        rafal.setName(rafal.getName());
+        rafal.setName(rafal.getNameInput());
+        view.displayName(rafal);
 
 
-        viev.displayCardAttributes(rafal.getHand().passCard());
-        viev.displayChosenAttribure(rafal.getHand().passCard(), rafal.getInput());
+        view.displayCardAttributes(rafal.getHand().passCard());
+        view.displayChosenAttribure(rafal.getHand().passCard(), rafal.getInput());
+
+        
 
     }
 }

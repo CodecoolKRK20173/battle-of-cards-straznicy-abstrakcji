@@ -1,4 +1,4 @@
-public class Viev{
+public class View {
 
 
     public void displayCardAttributes(Card card){
@@ -28,7 +28,7 @@ public class Viev{
     }
 
     public void displayName(Computer comp){
-        System.out.println("Computer");
+        System.out.println(comp.getName());
     }
     
 }
