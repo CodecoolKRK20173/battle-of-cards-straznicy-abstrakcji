@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Card implements Comparable<Card> {
@@ -41,25 +42,29 @@ public class Card implements Comparable<Card> {
 
     @Override
     public int compareTo(Card secondCard) {
-        List<Integer> firstCardAttribute = new ArrayList<Integer>();
-        List<Integer> secondCardAttribute = new ArrayList<Integer>();
-        int result;
 
-        firstCardAttribute.add(this.metascore);
-        firstCardAttribute.add(this.userScore);
-        firstCardAttribute.add(this.numberOfCopies);
-        firstCardAttribute.add(this.openingMonthIncome);
-
-        secondCardAttribute.add(secondCard.metascore);
-        secondCardAttribute.add(secondCard.userScore);
-        secondCardAttribute.add(secondCard.numberOfCopies);
-        secondCardAttribute.add(secondCard.openingMonthIncome);
-
-        result = firstCardAttribute.get(0) - secondCardAttribute.get(0);
-        if(result == 0){
-            
-        }
+        int result = 0;
+        List<Integer> firstCardAttribute = Arrays.asList(this.metascore,this.userScore,this.numberOfCopies,this.openingMonthIncome);
+        List<Integer> secondCardAttribute = Arrays.asList(secondCard.metascore,secondCard.userScore, secondCard.numberOfCopies, secondCard.openingMonthIncome);
        
+        int index = 0;
+        while(index < firstCardAttribute.size()){
+            result = firstCardAttribute.get(index) - secondCardAttribute.get(index);
+        if(result > 0){
+            System.out.println("pierwsza karta lepsza");   
+            return result;
+        }
+        else if(result < 0){
+            System.out.println("druga karta wyzsza");
+            return result;
+        }
+        else{
+            index++;
+            if(index == 4){
+                System.out.println("Cards are equal.");
+            }
+        }
+        }
         return result;
     }
 

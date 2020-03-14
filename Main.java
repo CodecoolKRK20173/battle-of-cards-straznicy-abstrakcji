@@ -12,16 +12,16 @@ class Main {
         view.displayName(comp);
 
         Gamer rafal = new Gamer(deck.getGamerCards());
-        rafal.setName(rafal.getNameFromUser());
-        view.displayName(rafal);
+        // rafal.setName(rafal.getNameFromUser());
+        // view.displayName(rafal);
         
         Card computerCard = comp.getHand().passCard();
         Card rafalCard = rafal.getHand().passCard();
         rafalCard.compareTo(computerCard);
 
 
-        view.displayCardAttributes(rafal.getHand().passCard());
-        view.displayChosenAttribure(rafal.getHand().passCard(), rafal.getInput());
+        // view.displayCardAttributes(rafal.getHand().passCard());
+        // view.displayChosenAttribure(rafal.getHand().passCard(), rafal.getInput());
 
 
         
