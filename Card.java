@@ -43,31 +43,85 @@ public class Card implements Comparable<Card> {
     @Override
     public int compareTo(Card secondCard) {
 
-        int result = 0;
-        List<Integer> firstCardAttribute = Arrays.asList(this.metascore,this.userScore,this.numberOfCopies,this.openingMonthIncome);
-        List<Integer> secondCardAttribute = Arrays.asList(secondCard.metascore,secondCard.userScore, secondCard.numberOfCopies, secondCard.openingMonthIncome);
-       
-        int index = 0;
-        while(index < firstCardAttribute.size()){
-            result = firstCardAttribute.get(index) - secondCardAttribute.get(index);
+        int result;
+
+        result = this.metascore - secondCard.metascore;
+            
         if(result > 0){
-            System.out.println("pierwsza karta lepsza");   
+            System.out.println("Karta pierwsza jest wyzsza");
+            return result;
+
+        }if(result < 0){
+            System.out.println("Karta druga jest wyzsza");
             return result;
         }
-        else if(result < 0){
-            System.out.println("druga karta wyzsza");
-            return result;
-        }
-        else{
-            index++;
-            if(index == 4){
-                System.out.println("Cards are equal.");
+            else{
+
+            result = this.userScore - secondCard.userScore;
+            if(result > 0){
+                System.out.println("Karta pierwsza jest wyzsza");
+                return result;
+    
+            }if(result < 0){
+                System.out.println("Karta druga jest wyzsza");
+                return result;
+            }
+                else{
+                    result = this.numberOfCopies - secondCard.numberOfCopies;
+                if(result > 0){
+                    System.out.println("Karta pierwsza jest wyzsza");
+                    return result;
+        
+                }if(result < 0){
+                    System.out.println("Karta druga jest wyzsza");
+                    return result;
+                }
+                    else{
+                        result = this.openingMonthIncome - secondCard.openingMonthIncome;
+                        if(result > 0){
+                            System.out.println("Karta pierwsza jest wyzsza");
+                            return result;
+                
+                        }if(result < 0){
+                            System.out.println("Karta druga jest wyzsza");
+                            return result;
+                        }
+                            else{
+                                System.out.println("KARTY SA TAKIE SAME, ALE JAJA!");
+                                return result;
+                            }
+                    }
+                }
             }
         }
-        }
-        return result;
+                
     }
 
+    //     int result = 0;
+    //     List<Integer> firstCardAttribute = Arrays.asList(this.metascore,this.userScore,this.numberOfCopies,this.openingMonthIncome);
+    //     List<Integer> secondCardAttribute = Arrays.asList(secondCard.metascore,secondCard.userScore, secondCard.numberOfCopies, secondCard.openingMonthIncome);
+       
+    //     int index = 0;
+    //     while(index < firstCardAttribute.size()){
+    //         result = firstCardAttribute.get(index) - secondCardAttribute.get(index);
+    //     if(result > 0){
+    //         System.out.println("pierwsza karta lepsza");   
+    //         return result;
+    //     }
+    //     else if(result < 0){
+    //         System.out.println("druga karta wyzsza");
+    //         return result;
+    //     }
+    //     else{
+    //         index++;
+    //         if(index == 4){
+    //             System.out.println("Cards are equal.");
+    //         }
+    //     }
+    //     }
+    //     return result;
+    // }
 
 
-}
+
+
