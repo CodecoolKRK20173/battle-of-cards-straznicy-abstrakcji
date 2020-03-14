@@ -15,9 +15,10 @@ class Main {
         rafal.setName(rafal.getNameFromUser());
         view.displayName(rafal);
 
-
+        System.out.println(comp.getHand().passCard().compareTo(rafal.getHand().passCard()));
         view.displayCardAttributes(rafal.getHand().passCard());
         view.displayChosenAttribure(rafal.getHand().passCard(), rafal.getInput());
+
 
         
 

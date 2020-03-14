@@ -1,4 +1,4 @@
-public class Card {
+public class Card implements Comparable<Card> {
 
     private String name;
     private int metascore;
@@ -35,5 +35,16 @@ public class Card {
     public int getOpeningMonthIncome(){
         return openingMonthIncome;
     }
+
+    @Override
+    public int compareTo(Card secondCard) {
+        int result;
+
+        result = this.metascore - secondCard.metascore; 
+        
+        return result;
+    }
+
+
 
 }
