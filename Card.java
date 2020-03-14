@@ -41,7 +41,11 @@ public class Card implements Comparable<Card> {
         int result;
 
         result = this.metascore - secondCard.metascore; 
-        
+        if(result > 0){
+            System.out.println("Rafal's card is stronger");
+        }else{
+            System.out.println("Computer's card is stronger");
+        }
         return result;
     }
 
