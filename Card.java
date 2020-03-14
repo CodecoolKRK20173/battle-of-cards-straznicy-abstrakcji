@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Card implements Comparable<Card> {
 
     private String name;
@@ -38,14 +41,25 @@ public class Card implements Comparable<Card> {
 
     @Override
     public int compareTo(Card secondCard) {
+        List<Integer> firstCardAttribute = new ArrayList<Integer>();
+        List<Integer> secondCardAttribute = new ArrayList<Integer>();
         int result;
 
-        result = this.metascore - secondCard.metascore; 
-        if(result > 0){
-            System.out.println("Rafal's card is stronger");
-        }else{
-            System.out.println("Computer's card is stronger");
+        firstCardAttribute.add(this.metascore);
+        firstCardAttribute.add(this.userScore);
+        firstCardAttribute.add(this.numberOfCopies);
+        firstCardAttribute.add(this.openingMonthIncome);
+
+        secondCardAttribute.add(secondCard.metascore);
+        secondCardAttribute.add(secondCard.userScore);
+        secondCardAttribute.add(secondCard.numberOfCopies);
+        secondCardAttribute.add(secondCard.openingMonthIncome);
+
+        result = firstCardAttribute.get(0) - secondCardAttribute.get(0);
+        if(result == 0){
+            
         }
+       
         return result;
     }
 

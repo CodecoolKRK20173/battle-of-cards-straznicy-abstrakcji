@@ -10,7 +10,7 @@ class CSVCardDao implements CardDao {
     @Override
     public List<Card> getCardFromFile() throws FileNotFoundException {
 
-       File file = new File("games.csv");
+       File file = new File("games_test.csv");
        Scanner scan = new Scanner(file);
       
        while(scan.hasNextLine()){
