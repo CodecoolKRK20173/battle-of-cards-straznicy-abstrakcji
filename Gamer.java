@@ -10,7 +10,7 @@ public class Gamer extends AbstractPlayer {
         super(cards);
     }
 
-    public String getNameInput(){
+    public String getNameFromUser(){
         String dupa = scan.nextLine();
         return dupa;
     }

@@ -8,7 +8,6 @@ public class Hand{
         this.cards = cards;
     }
 
-
     public Card passCard(){
         int firstCardIndex = 0;
         Card card = cards.get(firstCardIndex);

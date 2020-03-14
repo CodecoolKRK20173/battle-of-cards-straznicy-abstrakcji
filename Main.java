@@ -12,7 +12,7 @@ class Main {
         view.displayName(comp);
 
         Gamer rafal = new Gamer(deck.getGamerCards());
-        rafal.setName(rafal.getNameInput());
+        rafal.setName(rafal.getNameFromUser());
         view.displayName(rafal);
 
 
