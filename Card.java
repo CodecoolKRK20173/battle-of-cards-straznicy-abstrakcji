@@ -94,7 +94,22 @@ public class Card implements Comparable<Card> {
                 }
             }
         }
-                
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null){
+            return false;
+        }
+        else if(obj instanceof Card){
+            Card secondCard = (Card) obj;
+            if(this.getName().equals(secondCard.getName())){
+                System.out.println("Nazwy sa equal.");
+            }
+        }
+
+
+
+        return false;
+    }    
     }
 
     //     int result = 0;

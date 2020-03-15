@@ -18,6 +18,7 @@ class Main {
         Card computerCard = comp.getHand().passCard();
         Card rafalCard = rafal.getHand().passCard();
         rafalCard.compareTo(computerCard);
+        rafalCard.equals(computerCard);
 
 
         // view.displayCardAttributes(rafal.getHand().passCard());
