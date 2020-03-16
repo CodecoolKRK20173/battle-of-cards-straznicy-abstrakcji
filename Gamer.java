@@ -22,7 +22,6 @@ public class Gamer extends AbstractPlayer {
             playerChoice = scan.nextInt();
         }
         return playerChoice;
-
     }
    
 }

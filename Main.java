@@ -9,16 +9,17 @@ class Main {
         View view = new View();
 
         Computer comp = new Computer(deck.getComputerCards());
-        view.displayName(comp);
 
+        comp.calculateBestAttribute();
+        System.out.println(comp.getInputFromComputer());
+        view.displayCardAttributes(comp.getHand().passCard());
         Gamer rafal = new Gamer(deck.getGamerCards());
         // rafal.setName(rafal.getNameFromUser());
         // view.displayName(rafal);
-        
+
         Card computerCard = comp.getHand().passCard();
         Card rafalCard = rafal.getHand().passCard();
-        rafalCard.compareTo(computerCard);
-        rafalCard.equals(computerCard);
+    
 
 
         // view.displayCardAttributes(rafal.getHand().passCard());
