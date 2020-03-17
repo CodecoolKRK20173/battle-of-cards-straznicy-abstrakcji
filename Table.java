@@ -1,22 +1,36 @@
-public class Table{
+import java.io.FileNotFoundException;
 
-    private Gamer player;
-    // private Computer computer;
+public class Table {
 
+    private int roundNumber = 1;
 
+    CardDao cardDao = new CSVCardDao();
+    Deck deck = new Deck(cardDao.getCardFromFile());
+    Gamer gamer = new Gamer(deck.getGamerCards());
+    Computer computer = new Computer(deck.getComputerCards());
+    View view = new View();
 
-    public Table(Gamer gamer){
-        this.player = gamer;
-        // this.computer = computer;
+    public Table() throws FileNotFoundException{
 
     }
 
-    
-
-    public void playRound(){
+	public void playRound(){
+        // tutaj ma być metoda z view która pokazuje punkty i imiona
+        Card playerCard = gamer.getHand().passCard();
+        Card computerCard = computer.getHand().passCard();
+        int result = playerCard.compareTo(computerCard);
+        System.out.println(result);
         
+
+        
+        
+        
+        roundNumber++;
+    }
+
+    public void playGame(){
+        gamer.setName(gamer.getNameFromUser());
 
         
     }
-
 }

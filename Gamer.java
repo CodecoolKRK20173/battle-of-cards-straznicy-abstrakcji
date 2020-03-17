@@ -11,8 +11,8 @@ public class Gamer extends AbstractPlayer {
     }
 
     public String getNameFromUser(){
-        String dupa = scan.nextLine();
-        return dupa;
+        String name = scan.nextLine();
+        return name;
     }
 
     public int getInput(){
