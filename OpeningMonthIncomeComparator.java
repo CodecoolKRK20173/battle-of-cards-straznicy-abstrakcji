@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class GetOpeningMonthIncomeComparator implements Comparator<Card> {
+public class OpeningMonthIncomeComparator implements Comparator<Card> {
 
     @Override
     public int compare(Card firstCard, Card secondCard) {

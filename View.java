@@ -3,7 +3,8 @@ public class View {
 
     public void displayCardAttributes(Card card){
 
-        System.out.println("\n"+card.getName()+"\n");
+        System.out.println("\n\nTwoja obecna karta:");
+        System.out.println(card.getName()+"\n");
         System.out.println("1. Metascore: " + card.getMetascore());
         System.out.println("2. User score: " + card.getUserScore());
         System.out.println("3. Number of copies sold: " + card.getNumberOfCopies());
@@ -23,12 +24,18 @@ public class View {
         }
     }
     
-    public void displayName(Gamer gamer){
-        System.out.println("Player \n" + gamer.getName());
-    }
-
-    public void displayName(Computer comp){
-        System.out.println(comp.getName());
+    public void displayHelloMessage(){
+        System.out.println("\n Hello gamer !\n Welcome to Abstract Defenders Battle of Cards !\n\n Please tell us your name: ");
+        
     }
     
+    public void displayGameInfo(Gamer gamer, Computer comp){
+        String gameInfo = String.format("%1$s : %2$s vs %3$s : %4$s", gamer.getName(), gamer.getPoints(), comp.getName(), comp.getPoints()); 
+        System.out.println(gameInfo);
+    }
+
+    public void clearScreen(){
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
 }

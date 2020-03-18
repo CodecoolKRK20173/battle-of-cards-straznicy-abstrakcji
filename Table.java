@@ -1,4 +1,6 @@
 import java.io.FileNotFoundException;
+import java.util.Comparator;
+import java.util.concurrent.TimeUnit;
 
 public class Table {
 
@@ -15,21 +17,43 @@ public class Table {
     }
 
 	public void playRound(){
-        // tutaj ma być metoda z view która pokazuje punkty i imiona
-        Card playerCard = gamer.getHand().passCard();
-        Card computerCard = computer.getHand().passCard();
-        int result = playerCard.compareTo(computerCard);
-        System.out.println(result);
-        
 
         
+        Card playerCard = gamer.getHand().passCard();
+        Card computerCard = computer.getHand().passCard();
         
-        
+        view.displayGameInfo(gamer, computer);
+        view.displayCardAttributes(playerCard);
+        Comparator<Card> comparator = null;
+        int result = 0;
+
+        switch(gamer.getInput()){
+            case 1:
+                comparator = new MetascoreComparator();
+                result = comparator.compare(playerCard, computerCard);
+                break;
+            case 2:
+                comparator = new UserScoreComparator();
+                result = comparator.compare(playerCard, computerCard);
+                break;
+            case 3:
+                comparator = new NumberOfCopiesComparator();
+                result = comparator.compare(playerCard, computerCard);
+                break;
+            case 4:
+                comparator = new OpeningMonthIncomeComparator();
+                result = comparator.compare(playerCard, computerCard);
+                break;
+            }
+        System.out.println(result);
         roundNumber++;
     }
 
     public void playGame(){
+        view.displayHelloMessage();
         gamer.setName(gamer.getNameFromUser());
+        view.clearScreen();
+        playRound();
 
         
     }

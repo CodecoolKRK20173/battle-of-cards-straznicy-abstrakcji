@@ -28,6 +28,6 @@ public abstract class AbstractPlayer {
     }
 
     public void setName(String playerName){
-        this.name = playerName ;
+        this.name = playerName;
     }
 }
