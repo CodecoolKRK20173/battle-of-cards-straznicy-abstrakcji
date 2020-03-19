@@ -109,7 +109,18 @@ public class Card implements Comparable<Card> {
                 return true; 
         }
         return false;
-    }    
+    }
+    @Override
+    public int hashCode(){
+        int result = 17;
+        int primal = 19;
+
+        result = result * primal + this.metascore;
+        result = result * primal + this.userScore;
+        result = result * primal + this.numberOfCopies;
+        result = result * primal + this.openingMonthIncome;
+        return result;
+    }
     }
 
     //     int result = 0;
