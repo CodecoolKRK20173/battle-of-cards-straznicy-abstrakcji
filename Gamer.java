@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Scanner;
 
-public class Gamer extends AbstractPlayer {
+public class Gamer extends Player {
 
     public int playerChoice;
     Scanner scan = new Scanner(System.in);

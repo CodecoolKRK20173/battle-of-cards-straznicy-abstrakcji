@@ -1,13 +1,7 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.TreeMap;
-import java.util.Map.Entry;
 
-public class Computer extends AbstractPlayer {
+public class Computer extends Player {
 
     TreeMap<Integer, String> calculatedAttributes = new TreeMap<Integer, String>();
 

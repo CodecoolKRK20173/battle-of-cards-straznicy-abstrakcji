@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Card implements Comparable<Card> {
     private String name;
@@ -95,18 +92,22 @@ public class Card implements Comparable<Card> {
         }
     @Override
     public boolean equals(Object obj) {
+        if (this == obj){
+            return true;
+        }
         if (obj == null){
             return false;
         }
         else if(obj instanceof Card){
             Card secondCard = (Card) obj;
-            if(this.getName().equals(secondCard.getName())){
-                System.out.println("Nazwy sa equal.");
-            }
+            if (this.getName().equals(secondCard.getName()) && 
+                this.getMetascore() == secondCard.getMetascore() &&
+                this.getUserScore() == secondCard.getUserScore() &&
+                this.getNumberOfCopies() == secondCard.getNumberOfCopies() &&
+                this.getOpeningMonthIncome() == secondCard.getOpeningMonthIncome()
+                )
+                return true; 
         }
-
-
-
         return false;
     }    
     }

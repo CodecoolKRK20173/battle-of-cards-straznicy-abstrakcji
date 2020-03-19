@@ -1,13 +1,13 @@
 import java.util.List;
 
-public abstract class AbstractPlayer {
+public class Player {
         
     protected String name;
     private Hand hand;
     private int points = 0;
 
 
-    public AbstractPlayer(List<Card> cards){
+    public Player(List<Card> cards){
         this.hand = new Hand(cards);
     }
 

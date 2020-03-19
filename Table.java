@@ -1,6 +1,5 @@
 import java.io.FileNotFoundException;
 import java.util.Comparator;
-import java.util.concurrent.TimeUnit;
 
 public class Table {
 
@@ -79,18 +78,18 @@ public class Table {
         }else if(result < 0){
             computer.setPoints();
         }else{
-            System.out.println("Card are equal.");
+            System.out.println("Cards are equal.");
         }
     }
 
     public void playGame(){
+
         view.displayHelloMessage();
         gamer.setName(gamer.getNameFromUser());
         view.clearScreen();
         while(roundNumber < 5){
             playRound();
         }
-
         
     }
 }
