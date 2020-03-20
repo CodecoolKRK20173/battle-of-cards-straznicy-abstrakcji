@@ -16,6 +16,7 @@ public class Gamer extends Player {
     }
 
     public int getInput(){
+        System.out.printf("\n"+"Which attribute you choose to play? : ");
         playerChoice = scan.nextInt();
         while(playerChoice < 1 || playerChoice > 4){
             System.out.println("Podaj liczbe od 1 do 4");

@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Comparator;
 
 public class Table {
@@ -12,26 +13,26 @@ public class Table {
 
     Hand gamerHand = gamer.getHand();
     Hand computerHand = computer.getHand();
-
+    int choice;
     View view = new View();
 
-    public Table() throws FileNotFoundException{
+    public Table() throws FileNotFoundException {
 
     }
 
-    public Comparator<Card> createComparator(){
+    public Comparator<Card> createComparator() {
 
-        Comparator<Card> comparator =  null;
-        int choice;
+        Comparator<Card> comparator = null;
 
-        if(roundNumber % 2 == 0){
+
+        if (roundNumber % 2 == 0) {
             choice = computer.getInputFromComputer();
-        }
-        else{
+        } else {
             choice = gamer.getInput();
         }
+        System.out.println("choice: "+choice);
 
-        switch(choice){
+        switch (choice) {
             case 1:
                 comparator = new MetascoreComparator();
                 return comparator;
@@ -44,32 +45,35 @@ public class Table {
             case 4:
                 comparator = new OpeningMonthIncomeComparator();
                 return comparator;
-            }
-            return comparator;
+        }
+        return comparator;
     }
 
-	public void playRound(){
+    public void playRound() throws IOException {                            //  ?????????????????????
 
         Card playerCard = gamer.getHand().passCard();
         Card computerCard = computer.getHand().passCard();
         
         view.displayGameInfo(gamer, computer);
         view.displayCardAttributes(playerCard);
-        view.displayCardAttributes(computerCard);
-
+        // view.displayCardAttributes(computerCard);
 
         Comparator<Card> comparator = createComparator();
-
         int result = comparator.compare(playerCard, computerCard);
         
+        System.out.println("result: " + result);
+
+        view.displayChosenAttribure(playerCard, computerCard, choice);
+
+        view.displayRoundResult(result);
+
         addPoints(result);
-
-        System.out.println(result);
-
         gamerHand.removeCard();
         computerHand.removeCard();  
         roundNumber++;
+        view.clearScreen();
     }
+
 
     public void addPoints(int result){
 
@@ -77,13 +81,12 @@ public class Table {
             gamer.setPoints();
         }else if(result < 0){
             computer.setPoints();
-        }else{
-            System.out.println("Cards are equal.");
         }
     }
 
-    public void playGame(){
 
+    public void playGame() throws IOException {
+    
         view.displayHelloMessage();
         gamer.setName(gamer.getNameFromUser());
         view.clearScreen();

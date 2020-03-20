@@ -17,4 +17,8 @@ public class Hand{
     public void removeCard(){
         cards.remove(firstCardIndex);
     }
+
+	public Hand isEmpty() {
+		return null;
+	}
 }
