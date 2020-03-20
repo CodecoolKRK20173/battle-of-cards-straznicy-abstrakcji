@@ -49,7 +49,7 @@ public class Table {
         return comparator;
     }
 
-    public void playRound() throws IOException {                            //  ?????????????????????
+    public void playRound() throws IOException {
 
         Card playerCard = gamer.getHand().passCard();
         Card computerCard = computer.getHand().passCard();
@@ -90,9 +90,14 @@ public class Table {
         view.displayHelloMessage();
         gamer.setName(gamer.getNameFromUser());
         view.clearScreen();
-        while(roundNumber < 5){
+        while(!(gamer.getHand().getCards().isEmpty())){
             playRound();
         }
+        
+        view.displayGameWinner(gamer, computer);
+
+
+        
         
     }
 }

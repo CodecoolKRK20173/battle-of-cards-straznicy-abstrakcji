@@ -35,6 +35,18 @@ public class View {
 
     }
 
+    public void displayGameWinner(Gamer gamer, Computer computer){
+        if(gamer.getPoints()>computer.getPoints()){
+            System.out.printf("%1$s WIN !", gamer.getName());
+        }
+        else if(gamer.getPoints()<computer.getPoints()){
+            System.out.printf("%1$s WIN !", computer.getName());
+        }
+        else{
+            System.out.println("DRAW !");
+        }
+    }
+
     public void displayGameInfo(Gamer gamer, Computer comp) {
         System.out.printf("\n\n%1$s : %2$s vs %3$s : %4$s", gamer.getName(), gamer.getPoints(), comp.getName(),
                 comp.getPoints());

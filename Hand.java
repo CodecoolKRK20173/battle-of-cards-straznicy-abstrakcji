@@ -9,6 +9,10 @@ public class Hand{
         this.cards = cards;
     }
 
+    public List<Card> getCards(){
+        return cards;
+    }
+
     public Card passCard(){
         Card card = cards.get(firstCardIndex);
        return card;
