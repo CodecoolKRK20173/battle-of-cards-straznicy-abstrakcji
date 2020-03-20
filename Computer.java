@@ -12,6 +12,7 @@ public class Computer extends Player {
     }
 
     public void calculateBestAttribute() {
+        try{
         Card actualCard = this.getHand().passCard();
         int maxScore = 100;
         int maxNumberOfCopies = 1200;
@@ -26,6 +27,10 @@ public class Computer extends Player {
         calculatedAttributes.put(userScorePercent, "userScore");
         calculatedAttributes.put(numberOfCopiePercent, "numberOfCopies");
         calculatedAttributes.put(incomePercent, "openingMonthIncome");
+        }
+        catch(NullPointerException e){
+            System.out.println("Card doesn't exist");
+        }
     }
 
     public int getInputFromComputer(){

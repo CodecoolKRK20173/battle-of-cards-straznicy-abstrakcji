@@ -37,13 +37,13 @@ public class View {
 
     public void displayGameWinner(Gamer gamer, Computer computer){
         if(gamer.getPoints()>computer.getPoints()){
-            System.out.printf("%1$s WIN !", gamer.getName());
+            System.out.printf("\n\n%1$s WIN !\n", gamer.getName());
         }
         else if(gamer.getPoints()<computer.getPoints()){
-            System.out.printf("%1$s WIN !", computer.getName());
+            System.out.printf("\n\n%1$s WIN !\n", computer.getName());
         }
         else{
-            System.out.println("DRAW !");
+            System.out.println("\n\nDRAW !\n");
         }
     }
 

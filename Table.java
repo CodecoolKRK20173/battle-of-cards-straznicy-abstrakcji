@@ -4,7 +4,8 @@ import java.util.Comparator;
 
 public class Table {
 
-    private int roundNumber = 1;
+    int roundNumber = 1;
+    int choice;
 
     CardDao cardDao = new CSVCardDao();
     Deck deck = new Deck(cardDao.getCardFromFile());
@@ -13,7 +14,6 @@ public class Table {
 
     Hand gamerHand = gamer.getHand();
     Hand computerHand = computer.getHand();
-    int choice;
     View view = new View();
 
     public Table() throws FileNotFoundException {
@@ -24,13 +24,11 @@ public class Table {
 
         Comparator<Card> comparator = null;
 
-
         if (roundNumber % 2 == 0) {
             choice = computer.getInputFromComputer();
         } else {
             choice = gamer.getInput();
         }
-        System.out.println("choice: "+choice);
 
         switch (choice) {
             case 1:
@@ -56,12 +54,10 @@ public class Table {
         
         view.displayGameInfo(gamer, computer);
         view.displayCardAttributes(playerCard);
-        // view.displayCardAttributes(computerCard);
 
         Comparator<Card> comparator = createComparator();
         int result = comparator.compare(playerCard, computerCard);
         
-        System.out.println("result: " + result);
 
         view.displayChosenAttribure(playerCard, computerCard, choice);
 
@@ -76,7 +72,6 @@ public class Table {
 
 
     public void addPoints(int result){
-
         if(result > 0){
             gamer.setPoints();
         }else if(result < 0){
@@ -90,14 +85,11 @@ public class Table {
         view.displayHelloMessage();
         gamer.setName(gamer.getNameFromUser());
         view.clearScreen();
+        
         while(!(gamer.getHand().getCards().isEmpty())){
             playRound();
         }
-        
+        view.displayGameInfo(gamer, computer);
         view.displayGameWinner(gamer, computer);
-
-
-        
-        
     }
 }
