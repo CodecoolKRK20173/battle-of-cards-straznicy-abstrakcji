@@ -1,3 +1,5 @@
+package com.codecool.app;
+
 import java.util.List;
 
 public class Hand{

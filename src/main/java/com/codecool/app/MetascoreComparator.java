@@ -1,3 +1,5 @@
+package com.codecool.app;
+
 import java.util.Comparator;
 
 public class MetascoreComparator implements Comparator<Card> {

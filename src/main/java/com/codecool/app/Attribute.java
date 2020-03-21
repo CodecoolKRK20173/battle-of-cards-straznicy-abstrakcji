@@ -1,3 +1,5 @@
+package com.codecool.app;
+
 public class Attribute{
     
     private float value;
