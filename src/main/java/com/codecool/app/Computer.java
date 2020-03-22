@@ -1,17 +1,11 @@
 package com.codecool.app;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.TreeMap;
-import java.util.Map.Entry;
 
 public class Computer extends Player {
 
-    TreeMap<Integer, String> calculatedAttributes = new TreeMap<Integer, String>();
+    TreeMap<Integer, String> calculatedAttributes = new TreeMap<>();
 
     public Computer(List<Card> cards) {
         super(cards);
@@ -31,24 +25,22 @@ public class Computer extends Player {
 
         calculatedAttributes.put(metaScorePercent, "metascore");
         calculatedAttributes.put(userScorePercent, "userScore");
-        calculatedAttributes.put(numberOfCopiePercent, "numberOfCopies");
-        calculatedAttributes.put(incomePercent, "openingMonthIncome");
+        calculatedAttributes.put(numberOfCopiePercent, "number_of_copies");
+        calculatedAttributes.put(incomePercent, "opening_income");
     }
 
-    public int getInputFromComputer(){
+    public int getInputFromComputer() {
+        calculateBestAttribute();
         String bestAttribute = calculatedAttributes.lastEntry().getValue();
-        int computerChoice;
-        if(bestAttribute.equals("metascore")){
-            return computerChoice = 1;
-        }
-        else if(bestAttribute.equals("userScore")){
-            return computerChoice = 2;
-        }
-        else if(bestAttribute.equals("numberOfCopies")){
-            return computerChoice = 3;
-        }else{
-            return computerChoice = 4;
+        if (bestAttribute.equals("metascore")) {
+            return  1;
+        } else if (bestAttribute.equals("userScore")) {
+            return 2;
+        } else if (bestAttribute.equals("numberOfCopies")) {
+            return 3;
+        } else {
+            return 4;
         }
     }
-    
+
 }
