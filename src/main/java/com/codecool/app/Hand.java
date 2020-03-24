@@ -15,22 +15,15 @@ public class Hand{
         return cards;
     }
 
-    public Card passCard() throws IndexOutOfBoundsException{
-        Card card= null;
-        try{
-            card = cards.get(firstCardIndex);
-        }
-        catch(IndexOutOfBoundsException e){
-            System.out.println("Hand is empty.");
-        }
-        return card;
+    public Card passCard() {
+        if(cards.isEmpty()){
+            System.out.println("The hand is empty.");
+            return null;
+        }else return cards.get(firstCardIndex);
     }
 
     public void removeCard(){
         cards.remove(firstCardIndex);
     }
 
-    public Hand isEmpty() {
-        return null;
-    }
 }
