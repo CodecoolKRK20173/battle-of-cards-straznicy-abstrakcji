@@ -7,18 +7,14 @@ public class Deck {
 
     private List<Card> cards;
 
-    private List<Card> gamerCards = new ArrayList<Card>();
-    private List<Card> computerCards = new ArrayList<Card>();
+    private List<Card> gamerCards;
+    private List<Card> computerCards;
 
     public Deck(List<Card> cards){
+        computerCards = new ArrayList<>();
+        gamerCards = new ArrayList<>();
         this.cards = cards;
         drawCards();
-    }
-
-    public void displayCards(){
-        for(Card card : cards){
-            System.out.println(card.getName());
-        }
     }
 
     private void drawCards(){
